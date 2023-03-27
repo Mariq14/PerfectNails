@@ -5,31 +5,31 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Създай</h1>
 
-<h4>Service</h4>
+<h4>Услуга</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ServiceName" class="control-label"></label>
+                <label asp-for="ServiceName" class="control-label">Име на услуга</label>
                 <input asp-for="ServiceName" class="form-control" />
                 <span asp-validation-for="ServiceName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label asp-for="Price" class="control-label">Цена</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">Описание</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ServiceType" class="control-label"></label>
+                <label asp-for="ServiceType" class="control-label">Тип</label>
                 <select asp-for="ServiceType" asp-items="@Html.GetEnumSelectList<TypeService>()" class="form-control"></select>
                 <span asp-validation-for="ServiceType" class="text-danger"></span>
             </div>
@@ -39,14 +39,14 @@
                     <span asp-validation-for="DateCreated" class="text-danger"></span>
                 </div>*@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Създай" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Назад</a>
 </div>
 
 @section Scripts {

@@ -3,13 +3,16 @@
 
 @{
     ViewData["Title"] = "Index";
+
 }
 
 <h1>Услуги</h1>
-
+@if (User.IsInRole("Admin")) {
 <p>
     <a asp-action="Create">Създай нова услуга</a>
 </p>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -29,9 +32,9 @@
                 @*  @Html.DisplayNameFor(model => model.ServiceType)*@
                 Тип на услугата
             </th>
-            <th>
+            <!--<th>-->
                 @* @Html.DisplayNameFor(model => model.DateCreated)*@
-            </th>
+            <!--</th>-->
             <th></th>
         </tr>
     </thead>
@@ -51,14 +54,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ServiceType)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.DateCreated)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                </td>*@
+            <td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Промени</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                }
+
+                <a asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+            </td>
             </tr>
         }
     </tbody>

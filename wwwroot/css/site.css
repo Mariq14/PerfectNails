@@ -5,6 +5,7 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+
 }
 
 /* Provide sufficient contrast against white background */
@@ -14,14 +15,15 @@ a {
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
+  background-color: transparent;
   border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b6ec2;
+  background-color: lavender;
   border-color: #1861ac;
+
 }
 
 /* Sticky footer styles
@@ -65,6 +67,7 @@ body {
     background-image: url("../background-marble.jpg");
     background-position: center;
     background-size: cover;
+    background-repeat: repeat-x;
 }
 .footer {
   position: absolute;
@@ -72,4 +75,15 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+a.material-symbols-outlined {
+    position: relative;
+    left: 300px;
+}
+.cardd card{
+    float: left;
+    justify-content-;
+    border: 3px groove;
+    padding: 5px;
+    margin:20px;
 }

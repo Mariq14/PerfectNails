@@ -6,10 +6,10 @@
 }
 
 <h1>Резервации</h1>
-
+@if (User.IsInRole("Admin")) {
 <p>
     <a asp-action="Create">Създай нова резервация</a>
-</p>
+</p> }
 <table class="table">
     <thead>
         <tr>
@@ -18,8 +18,12 @@
                 Услуга
             </th>
             <th>
-                 @*@Html.DisplayNameFor(model => model.Users)*@
+                @*@Html.DisplayNameFor(model => model.Users)*@
                 Потребител
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ReservatedOn)*@
+                Дата на резервация
             </th>
             <th></th>
         </tr>
@@ -27,19 +31,27 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Services.ServiceType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Users.UserName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Services.ServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservatedOn)
+            </td>
+            <td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Промени</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                }
+
+                <a asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+
+            </td>
+        </tr>
         }
     </tbody>
 </table>

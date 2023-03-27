@@ -1,5 +1,4 @@
-﻿@using ProjectPrettyNails.Data
-@model IEnumerable<ProjectPrettyNails.Data.Articul>
+﻿@model IEnumerable<ProjectPrettyNails.Data.Articul>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,83 +7,65 @@
 <h1>Продукти</h1>
 
 <p>
-    <a asp-action="Create">Създай нов артикул</a>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create">Създай нов артикул</a>
+    }
 </p>
-<table class="table" >
-    <thead>
-        
-        <tr>
-            <th>
-                @* @Html.DisplayNameFor(model => model.ArticulName)*@
-                Име на артикула
-            </th>
-            <th>
-                @*  @Html.DisplayNameFor(model => model.Price)*@
-                Цена
-            </th>
-            <th>
-                @* @Html.DisplayNameFor(model => model.Description)*@
-                Описание
-            </th>
-            <th>
-                @* @Html.DisplayNameFor(model => model.ImageURL1)*@
-                Снимка1
-            </th>
-            <th>
-                @* @Html.DisplayNameFor(model => model.ImageURL2)*@
-                Снимка2
-            </th>
-            <th>
-                @* @Html.DisplayNameFor(model => model.ImageURL3)*@
-                Снимка3
-            </th>
-            <th>
-                @* @Html.DisplayNameFor(model => model.Type)*@
-                Тип на артикула
-            </th>
-            <th>
-                @* @Html.DisplayNameFor(model => model.DateCreated)*@
+<div class="cardd row" style="margin:20px;">
+@foreach (var item in Model)
+{
 
-            </th>
-            <th></th>
-        </tr>
-       
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ArticulName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    <img src=" @Html.DisplayFor(modelItem => item.ImageURL1)" width="100" />
-                </td>
-                <td>
-                    <img src=" @Html.DisplayFor(modelItem => item.ImageURL2)" width="100"/>
-                   
-                </td>
-                <td>
-                    <img src=" @Html.DisplayFor(modelItem => item.ImageURL3)" width="100" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.DateCreated)
-                </td>*@
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="card" style="width: 150px; margin: 20px;">
+        <div class="card-body">
+
+            <div class="card-img">
+                <img src=" @Html.DisplayFor(modelItem => item.ImageURL1)" style="width:100%;">
+            </div>
+            <div class="card-img">
+                <img src=" @Html.DisplayFor(modelItem => item.ImageURL2)" style="width:100%;">
+            </div>
+            <div class="card-img">
+                <img src=" @Html.DisplayFor(modelItem => item.ImageURL3)" style="width:100%;">
+            </div>
+
+            <h5 class="card-title">
+                @Html.DisplayFor(modelItem => item.ArticulName)
+            </h5>
+
+            @*<p class="card-text">
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>*@
+            <p class="card-text">
+                @Html.DisplayFor(modelItem => item.Type)
+            </p>
+            <p class="card-text">
+                @Html.DisplayFor(modelItem => item.Price)
+            </p>
+
+            <div>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.Id">Промени</a>
+                    <a class="btn btn-info" asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+
+                }
+
+                <a class="btn btn-danger" asp-controller="Orders" asp-action="Create" asp-route-articulId="@item.Id">К У П И</a>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+    
+}
+</div>
+

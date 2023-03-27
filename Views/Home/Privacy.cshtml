@@ -1,7 +1,39 @@
-﻿@{
+﻿@using ProjectPrettyNails.Data;
+@{
     ViewData["Title"] = "График на свободните часове на специалистите";
 }
 <h1>@ViewData["Title"]</h1>
 
-<br /><br />
+<br />
+<br />
 <p>Свободни дати и часове</p>
+
+
+<table class="table1">
+    <thead>
+        <tr>
+            <th style="border: 2px groove; text-align: center;">Специалист</th>
+            <th style="border: 2px groove; text-align: center;">Услуга</th>
+            <th style="border: 2px groove; text-align: center;">Свободен ден</th>
+            <th style="border: 2px groove; text-align: center;">Свободен час</th>
+        </tr>
+    </thead>
+    <tbody>
+    <td style="border: 2px groove; text-align: center;">Мария</td>
+    <td style="border: 2px groove; text-align: center;">Маникюр</td>
+    <td style="border: 2px groove; text-align: center;">22.04.2023г.</td>
+    <td style="border: 2px groove; text-align: center;">10:30 </td>
+    <tbody>
+    <td style="border: 2px groove; text-align: center;">Габриела</td>
+    <td style="border: 2px groove; text-align: center;">Маникюр</td>
+    <td style="border: 2px groove; text-align: center;">21.04.2023г.</td>
+    <td style="border: 2px groove; text-align: center;">12:00</td>
+    </tbody>
+    </tbody>
+</table>
+
+<div>
+    
+    <a href="/Reservations/Create" class="btn btn-default" role="button" >Р Е З Е Р В И Р А Й</a>
+
+</div>

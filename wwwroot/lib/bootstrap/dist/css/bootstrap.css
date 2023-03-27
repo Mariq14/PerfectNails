@@ -2381,7 +2381,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #212529;
+  color: lavenderblush;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -2434,9 +2434,10 @@ fieldset:disabled a.btn {
   border-color: #0062cc;
 }
 
-.btn-primary:focus, .btn-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-}
+
+    .btn-primary:focus, .btn-primary.focus {
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
@@ -4158,7 +4159,7 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background-color:pink;
+  background-color:transparent;
 }
 
 .navbar > .container,
