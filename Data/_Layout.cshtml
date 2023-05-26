@@ -42,18 +42,25 @@
                                     <img src="~/shopping_cart.png" />
                                 </a>
                             </li>
-
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Services" asp-action="Index">Услуги</a>
-                                </li>
-                            }
                         }
-                        <li class="nav-item" >
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservations" asp-action="Index">Резервации</a>
+                            </li>
+                            <li class="navbar-toggleable-sm">
+                                <a class="material-symbols-outlined" class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">
+                                    <img src="~/shopping_cart.png" />
+                                </a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Services" asp-action="Index">Услуги</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">График </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>

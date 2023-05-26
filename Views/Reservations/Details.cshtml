@@ -10,24 +10,27 @@
 <div>
     <h4>Резервация</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Services)*@
-            Услуга
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Services.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Users)*@
-            Потребител
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.UserName)
-        </dd>
-    </dl>
+    <div class="card row" style="width:100%;">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Services)*@
+                Услуга
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Services.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Users)*@
+                Потребител
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Users.UserName)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Промени</a> |
+        <a asp-action="Index">Назад</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Промени</a> |
-    <a asp-action="Index">Назад</a>
 </div>

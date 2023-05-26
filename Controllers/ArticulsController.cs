@@ -18,7 +18,9 @@ namespace ProjectPrettyNails.Controllers
             _context = context;
         }
 
+
         // GET: Articuls
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Articuls.ToListAsync());

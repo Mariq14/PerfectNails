@@ -10,104 +10,106 @@
 <div>
     <h4>Продукт</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.ArticulName)*@
-            Име на продукта
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ArticulName)
-        </dd>
+    <div class="card row" style="width:100%;">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.ArticulName)*@
+                Име на продукта
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ArticulName)
+            </dd>
 
 
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Price)*@
-            Цена
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Description)*@
-            Описание
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL1)
-        </dt>
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Price)*@
+                Цена
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                Описание
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageURL1)
+            </dt>
 
-        @*<dd class="col-sm-10">
-            <img src=" @Html.DisplayFor(modelItem => modelItem.ImageURL1)" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL2)
-        </dt>
-        <dd class="col-sm-10">
-            <img src=" @Html.DisplayFor(modelItem => modelItem.ImageURL2)" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL3)
-        </dt>
-        <dd class="col-sm-10">
-            <img src=" @Html.DisplayFor(modelItem => modelItem.ImageURL3)" width="100" />
-        </dd>*@
+            @*<dd class="col-sm-10">
+                    <img src=" @Html.DisplayFor(modelItem => modelItem.ImageURL1)" width="100" />
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ImageURL2)
+                </dt>
+                <dd class="col-sm-10">
+                    <img src=" @Html.DisplayFor(modelItem => modelItem.ImageURL2)" width="100" />
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ImageURL3)
+                </dt>
+                <dd class="col-sm-10">
+                    <img src=" @Html.DisplayFor(modelItem => modelItem.ImageURL3)" width="100" />
+                </dd>*@
 
-        <div class="container" style="width:90%" >
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="container" style="width:100%">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="item1" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="item2"></li>
-                    <li data-target="#myCarousel" data-slide-to="item3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item1">
-                        <img src=" @Html.DisplayFor(model => model.ImageURL1)" alt="snimka1"  >
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="item1" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="item2"></li>
+                        <li data-target="#myCarousel" data-slide-to="item3"></li>
+                    </ol>
+                    <div class="carousel-inner" >
+                        <div class="item1">
+                            <img src=" @Html.DisplayFor(model => model.ImageURL1)" alt="snimka1" style="width:100%;">
+                        </div>
+                        <div class="item2 ">
+                            <img src=" @Html.DisplayFor(model => model.ImageURL2)" alt="snimka2" style="width:100%;">
+                        </div>
+                        <div class="item3">
+                            <img src=" @Html.DisplayFor(model => model.ImageURL3)" alt="snimka3" style="width:100%;">
+                        </div>
                     </div>
-                    <div class="item2 ">
-                        <img src=" @Html.DisplayFor(model => model.ImageURL2)" alt="snimka2" >
-                    </div>
-                    <div class="item3">
-                        <img src=" @Html.DisplayFor(model => model.ImageURL3)" alt="snimka3" >
-                    </div>
+                    @*Left and right controls*@
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                 @*Left and right controls*@ 
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-
-
-                    <dt class="col-sm-2">
-                        @*@Html.DisplayNameFor(model => model.Type)*@
-                        Тип
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Type)
-                    </dd>
-
-                    @*<dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.DateCreated)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.DateCreated)
-                    </dd>*@
-                </dl>
             </div>
-<div>
-    <a asp-controller="Orders" asp-action="Create" asp-route-articulId="@Model.Id">К У П И</a>
-    @if (User.IsInRole("Admin"))
-            {
+
+
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Type)*@
+                Тип
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            @*<dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DateCreated)
+                </dd>*@
+        </dl>
+    </div>
+    <div>
+        <a asp-controller="Orders" asp-action="Create" asp-route-articulId="@Model.Id">К У П И</a>
+        @if (User.IsInRole("Admin"))
+        {
             <a asp-action="Edit" asp-route-id="@Model.Id">Промени</a>
-            }
-        
-    <a asp-action="Index">Назад</a>
+        }
+
+        <a asp-action="Index">Назад</a>
+    </div>
 </div>

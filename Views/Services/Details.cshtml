@@ -10,45 +10,48 @@
 <div>
     <h4>Услуга</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.ServiceName)*@
-            Име на услугата
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ServiceName)
-        </dd>
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Price)*@
-            Цена
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Description)*@
-            Описание
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.ServiceType)*@
-            Тип
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ServiceType)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DateCreated)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-controller="Reservations" asp-action="CreateWithServiceId" asp-route-serviceId="@Model.Id">Р Е З Е Р В И Р А Й</a>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Промени</a> |
-    <a asp-action="Index">Назад</a>
+    <div class="card row" style="width:100%;">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.ServiceName)*@
+                Име на услугата
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ServiceName)
+            </dd>
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Price)*@
+                Цена
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                Описание
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @*@Html.DisplayNameFor(model => model.ServiceType)*@
+                Тип
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ServiceType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateCreated)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-controller="Reservations" asp-action="CreateWithServiceId" asp-route-serviceId="@Model.Id">Р Е З Е Р В И Р А Й</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Промени</a> |
+        <a asp-action="Index">Назад</a>
+    </div>
+    </div>
 </div>

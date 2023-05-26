@@ -7,10 +7,11 @@
 }
 
 <h1>Услуги</h1>
-@if (User.IsInRole("Admin")) {
-<p>
-    <a asp-action="Create">Създай нова услуга</a>
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Създай нова услуга</a>
+    </p>
 }
 
 <table class="table">
@@ -33,7 +34,7 @@
                 Тип на услугата
             </th>
             <!--<th>-->
-                @* @Html.DisplayNameFor(model => model.DateCreated)*@
+            @* @Html.DisplayNameFor(model => model.DateCreated)*@
             <!--</th>-->
             <th></th>
         </tr>
@@ -55,18 +56,22 @@
                     @Html.DisplayFor(modelItem => item.ServiceType)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.DateCreated)
-                </td>*@
-            <td>
-                @if (User.IsInRole("Admin"))
-                {
-                    <a asp-action="Edit" asp-route-id="@item.Id">Промени</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
-                }
+                        @Html.DisplayFor(modelItem => item.DateCreated)
+                    </td>*@
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Промени</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                    }
 
-                <a asp-action="Details" asp-route-id="@item.Id">Детайли</a>
-            </td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+<div class="row" >
+    <img src="https://images.herzindagi.info/image/2023/Jan/manicure-main.jpg" style="width:40%;"/>
+    <img src="https://img.freepik.com/free-photo/closeup-photo-female-feet-spa-salon-pedicure-procedure-female-legs-water-decoration-flowers_186202-4352.jpg" style="width:50%; margin-left:10px;"/>
+</div>

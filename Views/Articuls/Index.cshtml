@@ -13,59 +13,59 @@
     }
 </p>
 <div class="cardd row" style="margin:20px;">
-@foreach (var item in Model)
-{
-
-    <div class="card" style="width: 150px; margin: 20px;">
-        <div class="card-body">
-
-            <div class="card-img">
-                <img src=" @Html.DisplayFor(modelItem => item.ImageURL1)" style="width:100%;">
-            </div>
-            <div class="card-img">
-                <img src=" @Html.DisplayFor(modelItem => item.ImageURL2)" style="width:100%;">
-            </div>
-            <div class="card-img">
-                <img src=" @Html.DisplayFor(modelItem => item.ImageURL3)" style="width:100%;">
-            </div>
-
-            <h5 class="card-title">
-                @Html.DisplayFor(modelItem => item.ArticulName)
-            </h5>
-
-            @*<p class="card-text">
-                @Html.DisplayFor(modelItem => item.Description)
-            </p>*@
-            <p class="card-text">
-                @Html.DisplayFor(modelItem => item.Type)
-            </p>
-            <p class="card-text">
-                @Html.DisplayFor(modelItem => item.Price)
-            </p>
-
-            <div>
-                @if (User.IsInRole("Admin"))
-                {
-                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.Id">Промени</a>
-                    <a class="btn btn-info" asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
-
-                }
-
-                <a class="btn btn-danger" asp-controller="Orders" asp-action="Create" asp-route-articulId="@item.Id">К У П И</a>
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Детайли</a>
-
-            </div>
-
-
-
-
-
-
-        </div>
-    </div>
-
-
+    @foreach (var item in Model)
+    {
     
-}
+        <div class="card" style="width: 150px; margin: 20px;">
+            <div class="card-body ">
+                
+                <div class="card-img">
+                    <img src=" @Html.DisplayFor(modelItem => item.ImageURL1)" style="width:100%;">
+                </div>
+                <div class="card-img">
+                    <img src=" @Html.DisplayFor(modelItem => item.ImageURL2)" style="width:100%;">
+                </div>
+                <div class="card-img">
+                    <img src=" @Html.DisplayFor(modelItem => item.ImageURL3)" style="width:100%;">
+                </div>
+
+                <h5 class="card-title">
+                    @Html.DisplayFor(modelItem => item.ArticulName)
+                </h5>
+
+                @*<p class="card-text" style="flex-direction:column;">
+            @Html.DisplayFor(modelItem => item.Description)
+        </p>*@
+                <p class="card-text">
+                    @Html.DisplayFor(modelItem => item.Type)
+                </p>
+                <p class="card-text">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </p>
+
+                <div>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.Id">Промени</a>
+                        <a class="btn btn-info" asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+
+                    }
+
+                    <a class="btn btn-danger" asp-controller="Orders" asp-action="Create" asp-route-articulId="@item.Id">К У П И</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    }
 </div>
 
